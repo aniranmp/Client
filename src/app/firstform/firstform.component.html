@@ -4,19 +4,19 @@
 
 
 <form class="change-w">
-    <div class="form-group">
+    <div class="form-group" [formGroup]="form">
         <label for="suEmail">Email address</label>
-        <input type="email" class="form-control" id="suEmail" aria-describedby="emailHelp">
+        <input [(ngModel)]="person.username" formControlName="email" type="email" class="form-control" id="suEmail">
         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
-    <div class="form-group">
+        <br>
         <label for="pass">Password</label>
-        <input type="password" class="form-control" id="signuppass">
+        <input [(ngModel)]="person.password" formControlName="pass" type="password" class="form-control" id="signuppass">
+        <br>
     </div>
-    <div class="form-group">
-        <label for="passc">Password confirmation</label>
-        <input type="password" class="form-control" id="signuppassc">
-    </div>
-
-    <button type="submit" class="btn btn-primary">Sign Up</button>
+    <button type="submit" class="btn btn-primary" (click)="signup()">Sign Up</button>
+    <button type="submit" class="btn btn-primary gray" (click)="login()">Log In</button>
 </form>
+<h1>
+    {{responseData}}
+</h1>
+<!-- Flexbox container for aligning the toasts -->

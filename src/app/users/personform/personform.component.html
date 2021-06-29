@@ -1,0 +1,12 @@
+<form class="my-form">
+    <div class="form-group" [formGroup]="form">
+        <label for="name">Name</label>
+        <input [(ngModel)]="person.name" formControlName="name" type="name" class="form-control" id="name" />
+        <label for="username">username</label>
+        <input [(ngModel)]="person.username" [(ngModel)]="person.email" formControlName="username" type="name" class="form-control" id="username" />
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="submit()">
+    Submit
+  </button>
+</form>
+<button class="btn btn-primary" (click)="goTochatRoom()">Go</button>

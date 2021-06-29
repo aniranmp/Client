@@ -2,3 +2,9 @@
     width: 500px;
     margin: auto;
 }
+
+.gray {
+    margin-left: 348px;
+    background-color: gray;
+    border-color: gray;
+}

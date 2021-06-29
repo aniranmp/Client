@@ -1,0 +1,17 @@
+.their-message {
+    color: #fff;
+    background-color: #000;
+}
+
+.my-message {
+    color: #000;
+    background-color: green;
+}
+
+.my-message .sender-name {
+    background-color: gray;
+}
+
+.their-message .sender-name {
+    background-color: purple;
+}

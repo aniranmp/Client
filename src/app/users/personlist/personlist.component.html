@@ -1,0 +1,24 @@
+<h1>Submited people</h1>
+
+<button class="btn btn-primary" (click)="getAll()">refresh</button>
+<hr />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Username</th>
+            <th scope="col">Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let person of people; index as i">
+            <th scope="row">{{ person.username }}</th>
+            <td>{{ person.name }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div *ngFor="let person of people">
+    id: {{ person.id }}
+    <br /> name: {{ person.name }}
+    <br /> username: {{ person.username }}
+</div>
