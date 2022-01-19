@@ -7,18 +7,79 @@
     Submit
   </button>
 </form> -->
+
+<head>
+
+
+    <link rel="stylesheet" href="https://use.typekit.net/rnz2bks.css">
+    <link rel="stylesheet" type="text/css" href="/src/app/chatroom/chatroom.component.css" />
+
+    <style>
+        body #cdawrap {
+            border: 1px solid #000;
+            --cda-bottom: auto;
+            --cda-right: 3.5rem;
+            --cda-left: auto;
+            --cda-text-align: right;
+            --cda-width: 370px;
+            border-radius: 6px;
+            padding: 0.75rem 1rem 1rem;
+            --footer-align: end;
+            --cda-text-size: 0.875rem;
+            --cda-footer-fontsize: 0.785rem;
+            --cda-text-color: #000;
+            position: absolute;
+            transform: translateY(-150%);
+        }
+
+        @media screen and (max-width: 800px) {
+            body #cdawrap {
+                transform: none;
+                border-radius: 0px;
+            }
+        }
+    </style>
+</head>
+
 <form class="my-form">
+    <br>
+    <br><br>
+    <carousel class="carousel-html-content" [borderRadius]="10" [cellWidth]="100" [freeScroll]="true" [height]="100" [autoplay]="true" [dots]="false" [loop]="true">
+
+        <label class="circle carousel-cell">{{username}}</label>
+        <label class="circle carousel-cell">{{username}}</label>
+        <label class="circle carousel-cell">{{username}}</label>
+        <label class="circle carousel-cell">{{username}}</label>
+        <label class="circle carousel-cell">{{username}}</label>
+        <label class="circle carousel-cell">{{username}}</label>
+        <label class="circle carousel-cell">{{username}}</label>
+        <label class="circle carousel-cell">{{username}}</label>
+        <label class="circle carousel-cell">{{username}}</label>
+        <label class="circle carousel-cell">{{username}}</label>
+        <label class="circle carousel-cell">{{username}}</label>
+        <label class="circle carousel-cell">{{username}}</label>
+        <label class="circle carousel-cell">{{username}}</label>
+    </carousel>
+
+    <!-- <span class="me"> </span> -->
     <div class="form-group" [formGroup]="form2">
-        <label for="message">message</label>
-        <input [(ngModel)]="message" formControlName="message" type="name" class="form-control" id="message" />
+        <label for="message"></label>
+        <input [(ngModel)]="message" formControlName="message" Placeholder="Message" type="text" class="form-control" id="message" />
     </div>
-    <button type="submit" class="btn btn-primary" (click)="sendMessage()">
+
+    <body class="demo-1">
+        <main>
+            <button class="button button--narvi content__item " (click)="sendMessage()"><span><span>Send</span></span></button>
+        </main>
+    </body>
+    <!-- <button type="submit" class="btn btn-primary" (click)="sendMessage()">
     Send
-  </button>
+  </button> -->
 </form>
 <div>
     <!-- [ngClass]="message.split(':')[0] == username ? 'my-message' : 'their-message'" -->
     <div [ngClass]="message.userName == username ? 'my-message' : 'their-message'" *ngFor="let message of messages">
         <span class="sender-name">{{ message.userName}}</span> : {{ message.message }}
+
     </div>
 </div>

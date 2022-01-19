@@ -14,7 +14,7 @@ import { WebsocketService } from './services/websocket.service';
 import { ChatroomComponent } from './chatroom/chatroom.component';
 import { PersonlistComponent } from './users/personlist/personlist.component';
 import { PersonformComponent } from './users/personform/personform.component';
-
+import {IvyCarouselModule} from 'angular-responsive-carousel'
 
 
 @NgModule({
@@ -34,6 +34,7 @@ import { PersonformComponent } from './users/personform/personform.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    IvyCarouselModule,
   ],
   providers: [ApiService,WebsocketService],
   bootstrap: [AppComponent]

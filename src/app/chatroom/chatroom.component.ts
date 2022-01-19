@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Message } from '../services/models';
 import { WebsocketService } from '../services/websocket.service';
+
+
 
 @Component({
   selector: 'app-chatroom',
@@ -43,10 +45,15 @@ messages: Message[] = [];
 
   sendMessage() {
   //  this.webSocket.myWebSocket.next(this.username + ':' + this.message);
+  if(this.form2.valid) {
+
     this.webSocket.myWebSocket.next({
       userName: this.username,
       message: this.message,
     });
+
+
+  }
     this.message = '';
   }
 
