@@ -43,7 +43,7 @@
 
 <form class="my-form">
     <br>
-    <br><br>
+
     <carousel class="carousel-html-content" [borderRadius]="10" [cellWidth]="100" [freeScroll]="true" [height]="100" [autoplay]="true" [dots]="false" [loop]="true">
 
         <label class="circle carousel-cell">{{username}}</label>
@@ -79,7 +79,7 @@
 <div>
     <!-- [ngClass]="message.split(':')[0] == username ? 'my-message' : 'their-message'" -->
     <div [ngClass]="message.userName == username ? 'my-message' : 'their-message'" *ngFor="let message of messages">
-        <span class="sender-name">{{ message.userName}}</span> : {{ message.message }}
+        <span class="sender-name">{{ message.userName}}</span> :{{ message.message }}
 
     </div>
 </div>
