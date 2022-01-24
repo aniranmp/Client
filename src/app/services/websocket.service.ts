@@ -1,16 +1,18 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { webSocket, WebSocketSubject } from 'rxjs/webSocket';
+import { ApiService } from './api.service';
 import { Message } from './models';
 @Injectable({
   providedIn: 'root'
 })
 export class WebsocketService {
 
-  constructor() { }
+  constructor(private api:ApiService) { }
 
   // urlHost = '171.22.25.154'; //local host
- urlHost  = 'localhost';
+  urlHost  = 'localhost';
   urlPort = '7777';
   urlProtocol = 'ws';
 
@@ -32,14 +34,14 @@ export class WebsocketService {
       },
       (err: Message) => {
         this.connect(username);
-      },
-      () => {}
+      }
     );
     // this.myWebSocket.next({ message: 'some message' });
   }
 
   public discounect() {
     this.myWebSocket.complete();
+
   }
 
   public sendMessage(message: string) {
@@ -47,5 +49,9 @@ export class WebsocketService {
     this.myWebSocket.sendData(message);
   //  this.myWebSocket.sendData(message);
 
+
   }
+
+
+
 }

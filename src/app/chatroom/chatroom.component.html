@@ -31,7 +31,7 @@
             position: absolute;
             transform: translateY(-150%);
         }
-
+        
         @media screen and (max-width: 800px) {
             body #cdawrap {
                 transform: none;
@@ -46,6 +46,13 @@
 
     <carousel class="carousel-html-content" [borderRadius]="10" [cellWidth]="100" [freeScroll]="true" [height]="100" [autoplay]="true" [dots]="false" [loop]="true">
 
+        <label *ngFor="let i = index; let ouser of onlineUsers" class="circle carousel-cell">
+         <i  [ngClass]="ouser == username ? 'me' : 'them'">{{ouser}}</i>
+        </label>
+
+
+        <!-- <label class="circle carousel-cell">{{username}}</label> -->
+        <!-- <label class="circle carousel-cell">{{username}}</label>
         <label class="circle carousel-cell">{{username}}</label>
         <label class="circle carousel-cell">{{username}}</label>
         <label class="circle carousel-cell">{{username}}</label>
@@ -55,10 +62,7 @@
         <label class="circle carousel-cell">{{username}}</label>
         <label class="circle carousel-cell">{{username}}</label>
         <label class="circle carousel-cell">{{username}}</label>
-        <label class="circle carousel-cell">{{username}}</label>
-        <label class="circle carousel-cell">{{username}}</label>
-        <label class="circle carousel-cell">{{username}}</label>
-        <label class="circle carousel-cell">{{username}}</label>
+        <label class="circle carousel-cell">{{username}}</label> -->
     </carousel>
 
     <!-- <span class="me"> </span> -->
